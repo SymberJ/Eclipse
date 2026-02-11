@@ -9,7 +9,7 @@ const HomeMF: React.FC<HomeProps> = () => {
   return (
     <div className="home-container mf-theme">
       <div className="main-content">
-        <h1 className="glow-text">HOME MF</h1>
+        <h1 className="glow-text">AURORA</h1>
         <p className="sub-text">PROJEKT POMARAŃCZOWY</p>
       </div>
     </div>

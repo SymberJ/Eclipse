@@ -9,7 +9,7 @@ const HomeSS: React.FC<HomeProps> = ({ onNavigate }) => {
   return (
     <div className="home-container ss-theme">
       <div className="main-content">
-        <h1 className="glow-text">HOME SS</h1>
+        <h1 className="glow-text">ECLIPSE</h1>
         <p className="sub-text">PROJEKT FIOLETOWY</p>
       </div>
     </div>
