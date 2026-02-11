@@ -1,0 +1,90 @@
+/* --- KONTENER GŁÓWNY --- */
+.landing-base {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  background-color: #000000;
+  gap: 150px;
+}
+
+.split-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+}
+
+/* --- POŚWIATA (GLOW) --- */
+.glow {
+  position: absolute;
+  z-index: 1;
+  width: 600px;
+  height: 600px;
+  filter: blur(85px);
+  pointer-events: none;
+  opacity: 0;
+  animation: glowFadeIn 1.5s ease-out 1.2s forwards;
+  will-change: opacity, transform;
+}
+
+.purple-glow { background: radial-gradient(circle, rgba(106, 13, 173, 0.5) 0%, rgba(0, 0, 0, 0) 70%); }
+.orange-glow { background: radial-gradient(circle, rgba(255, 140, 0, 0.5) 0%, rgba(0, 0, 0, 0) 70%); }
+
+/* --- LOGOTYPY --- */
+.logo-container {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.5s ease-out;
+}
+
+.main-logo-img {
+  height: auto;
+  display: block;
+  opacity: 0;
+  animation: logoEntrance 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: opacity, transform;
+}
+
+.logo-left {
+  width: 480px; 
+  animation: 
+    logoEntrance 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards, 
+    breathePurple 5s ease-in-out 1.2s infinite;
+}
+
+.logo-right {
+  width: 420px; 
+  animation: 
+    logoEntrance 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards, 
+    breatheOrange 5s ease-in-out 1.2s infinite;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+/* --- KEYFRAMES --- */
+@keyframes logoEntrance {
+  0% { opacity: 0; transform: translateY(50px); filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowFadeIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 0.6; transform: scale(1); }
+}
+
+@keyframes breathePurple {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(106, 13, 173, 0)); }
+  50% { filter: drop-shadow(0 0 35px rgba(106, 13, 173, 0.5)); }
+}
+
+@keyframes breatheOrange {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 140, 0, 0)); }
+  50% { filter: drop-shadow(0 0 35px rgba(255, 140, 0, 0.5)); }
+}

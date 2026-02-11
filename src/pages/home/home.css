@@ -1,0 +1,101 @@
+/* --- ZMIENNE TEMATYCZNE --- */
+.home-container.ss-theme {
+  --theme-color: 106, 13, 173; /* Fioletowy */
+}
+
+.home-container.mf-theme {
+  --theme-color: 255, 140, 0;  /* Pomarańczowy */
+}
+
+/* --- GŁÓWNY KONTENER STRONY --- */
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+  /* Animacja TYLKO dla treści strony - nie rusza Navbaru, jeśli jest on w App.tsx */
+  opacity: 0;
+  animation: fadeInPage 0.8s ease-out forwards;
+}
+
+/* Kontener na treść środkową */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+  z-index: 10;
+  text-align: center;
+}
+
+/* Napis główny z poświatą i pulsowaniem */
+.glow-text {
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-shadow: 0 0 20px rgba(var(--theme-color), 0.8), 
+               0 0 40px rgba(var(--theme-color), 0.4);
+  
+  /* Tekst wchodzi z opóźnieniem i zaczyna pulsować */
+  opacity: 0;
+  animation: fadeInContent 1.2s ease-out forwards 0.4s, 
+             pulseText 4s infinite ease-in-out 1.6s;
+  user-select: none;
+  margin: 0;
+}
+
+/* Tekst dolny */
+.sub-text {
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 20px;
+  font-family: sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeInContent 1.2s ease-out forwards 0.6s;
+}
+
+/* --- ANIMACJE (KEYFRAMES) --- */
+
+/* Pojawianie się tła sekcji */
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Wjeżdżanie tekstów od dołu */
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulsowanie napisu */
+@keyframes pulseText {
+  0%, 100% { 
+    opacity: 0.8; 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.03); 
+  }
+}
