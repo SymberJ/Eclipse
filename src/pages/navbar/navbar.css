@@ -28,15 +28,15 @@
 .mini-logo:hover {
   transform: scale(1.15) !important; /* Wymuszamy powiększenie */
   filter: grayscale(0) opacity(1) 
-          drop-shadow(-12px 0 15px rgba(255, 140, 0, 0.7)) 
-          drop-shadow(12px 0 15px rgba(106, 13, 173, 0.7)) !important;
+          drop-shadow(-12px 0 15px rgba(106, 13, 173, 0.5)) 
+          drop-shadow(12px 0 15px rgba(238, 194, 1, 0.5)) !important;
 }
 
 /* STAN AKTYWNY (Gdy jesteśmy na innej stronie niż landing) */
 .active-home {
   filter: grayscale(0) opacity(1) 
-          drop-shadow(-8px 0 12px rgba(255, 140, 0, 0.5)) 
-          drop-shadow(8px 0 12px rgba(106, 13, 173, 0.5));
+          drop-shadow(-8px 0 12px rgba(106, 13, 173, 0.5)) 
+          drop-shadow(8px 0 12px rgba(238, 194, 1, 0.5));
 }
 
 .mini-logo:active {

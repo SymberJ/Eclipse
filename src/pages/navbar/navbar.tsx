@@ -29,7 +29,7 @@ const Navbar = ({ onNavigate, activeView, theme }: NavbarProps) => {
           className={`nav-item ${isHomeActive ? 'active' : ''}`}
           onClick={() => onNavigate(theme)}
         >
-          HOME
+          STRONA GŁÓWNA
         </span>
         
         <span 
