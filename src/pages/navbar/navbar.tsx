@@ -9,9 +9,12 @@ interface NavbarProps {
 }
 
 const Navbar = ({ onNavigate, activeView, theme }: NavbarProps) => {
+  // Logika sprawdzania, która zakładka jest aktywna
   const isHomeActive = activeView === 'ss' || activeView === 'mf';
   const isAboutActive = activeView === 'about';
   const isDiscordActive = activeView === 'discord';
+  const isRecruitmentActive = activeView === 'recruitment';
+  const isAchievementsActive = activeView === 'achievements'; // Nowa logika
 
   return (
     <div className={`mini-nav ${theme}-nav`}>
@@ -40,10 +43,24 @@ const Navbar = ({ onNavigate, activeView, theme }: NavbarProps) => {
         </span>
 
         <span 
+          className={`nav-item ${isAchievementsActive ? 'active' : ''}`}
+          onClick={() => onNavigate('achievements')}
+        >
+          OSIĄGNIĘCIA
+        </span>
+
+        <span 
           className={`nav-item ${isDiscordActive ? 'active' : ''}`}
           onClick={() => onNavigate('discord')}
         >
           DISCORD
+        </span>
+
+        <span 
+          className={`nav-item ${isRecruitmentActive ? 'active' : ''}`}
+          onClick={() => onNavigate('recruitment')}
+        >
+          REKRUTACJA
         </span>
       </div>
     </div>
