@@ -18,11 +18,11 @@ const Landing = ({ onNavigate }: LandingProps) => {
 
       <div className="logos-wrapper">
         
-        {/* Logo 1 - Eclipse */}
+        {/* Logo 1 - Nocturne */}
         <div className="split-section">
           <div className="logo-container" onClick={() => onNavigate('ss')}>
             <img src={logo1} alt="Logo SS" className="main-logo-img logo-left" />
-            <span className="logo-text text-ss">Eclipse</span>
+            <span className="logo-text text-ss">Nocturne</span>
           </div>
         </div>
 
