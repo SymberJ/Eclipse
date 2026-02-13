@@ -1,8 +1,15 @@
 :root { background-color: #000000; }
-body { margin: 0; padding: 0; overflow: hidden; background-color: #000000; }
+
+body { 
+  margin: 0; 
+  padding: 0; 
+  overflow-y: auto; /* Pozwala na przewijanie w pionie */
+  overflow-x: hidden; /* Zapobiega przesuwaniu na boki */
+  background-color: #000000; 
+}
 
 .app-wrapper {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh; /* Zmienione z height na min-height */
   background-color: #000000;
 }
